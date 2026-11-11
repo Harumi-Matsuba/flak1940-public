@@ -8,4 +8,6 @@
 - The recipient's pen marks on frame 0993 (a mark under every third letter): they have nothing to do with the cipher and are taken to be a copying aid. Not verified.
 - Frame 0993, part 1: a hand-written mark between letters 55 and 56 could not be read. It did not matter for decryption.
 - How the key follows from the indicator group (first five letters of each part: ALCER, HENYZ, WOLQR, SOD?X; hand-written KDQXD, LMLGR) is not known. The 1939 key card lists four three-letter Kenngruppen.
-- The messages of other days on the same reel (9 April, 3, 8, 16, 20 May, 4 June and others) have not been read. The key appears to change daily.
+- The message of 4 June (frames 0863-0867) was read on 11 November 2026 (`docs/READING_0604.en.md`). Open there: the M of IMMEMDINGEN, the U of EIUS in part 2, the O of NRO at the end of part 5, and what the R of FLAKBATTR stands for. The transcription of part 5 fixed the letter shapes after the key was known and is not an independent reading. The four changes in parts 1-4 rest on the first reader looking at the image again; no second model judged them.
+- For the message of 3 May (frames 1100-1105) no key lengths stood out (8-50 scanned) with a candidate plaintext made from teleprinter message 1099 and a transcription by the second reader (Codex) only. Possible causes are m/n confusions in that transcription and X placed differently in the candidate.
+- The messages of the other days on the same reel (9 April, 8, 16, 20 May and others) have not been read. The key changes daily.

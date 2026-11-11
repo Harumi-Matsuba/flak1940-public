@@ -47,17 +47,36 @@
 
 数え方と断り書きは `docs/METHOD.md`。
 
+## 1940年6月4日の電報（2026年11月11日に追加）
+
+同じリールのコマ 0863〜0867（Flugabwehrkommando Schwarzwald の発信、5部、本文 928字）も、その日の鍵（前 19・後ろ 22）で全部を復号した。平文は同じ綴の印字の電信（コマ 0862）に当時の形で残っており、鍵はそれを使う既知平文の方法で戻した。新しいのはこの日の鍵である。
+
+> Zum Schutze von Heeresausladungen gehen in Stellung am 3. Juni 40: II./2./942 von Bahnhof Immendingen nach Bahnhof Sankt Georgen, seit 19.45 Uhr feuerbereit. … 4./321 (Eis) von Hüfingen nach Villingen, seit 4. Juni 40 04.35 Uhr feuerbereit.
+
+| 項目 | 値 |
+|---|---|
+| 語として通る字 | 925/928（99.7%） |
+| 対照（でたらめな鍵 1,000 組） | 本物以上 0 組 |
+| 鍵探しに使っていない部分 | 5部（199字）がそのまま読めた |
+| 別の読み手（Codex）との一致 | 電報全体 94.9%（5部の古い回を使うと 92.7%）。1〜4部 96.8〜98.9%、5部 74.5〜84.8% |
+
+**断り書き：** 5部は書き手の字形が特殊で（x を旗の付いた r の形、r を輪のある h の形で書く）、こちらの書き起こしは鍵を知ってから字形を決めた。5部の書き起こしは独立の読みではない。詳しくは `docs/READING_0604.md`、復号は `python3 src/decrypt_0604.py`。
+
 ## AI の使用
 
-書き起こし・平文の当てはめ・鍵探し・復号・文書は Claude Fable 5.1（Anthropic）。2回目の書き起こしと画像での判定は OpenAI Codex（gpt-6-astra）と Claude Sonnet。人が行ったのは、作業の指示と公開の判断である。人は画像と書き起こし・読みを照らしていない。
+書き起こし・平文の当てはめ・鍵探し・復号・文書は Claude Fable 5.1（Anthropic）。2回目の書き起こしと画像での判定は OpenAI Codex（gpt-6-astra）と Claude Sonnet。6月4日の電報（2026-11-11 追加）の書き起こし・平文の候補・鍵探し・復号・文書は Claude Opus 5.5、2回目の書き起こしは OpenAI Codex（gpt-6-astra）。人が行ったのは、作業の指示と公開の判断である。人は画像と書き起こし・読みを照らしていない。
 
 ## ファイル
 
-- `data/`：書き起こし（`ciphertext_0993.txt`、`ciphertext_1025_1027.txt`、復号する前の版）、鍵、平文
+- `data/`：書き起こし（`ciphertext_0993.txt`、`ciphertext_1025_1027.txt`、復号する前の版、6月4日の `ciphertext_0863_0867.txt`）、鍵（`key.txt`、`key_0604.txt`）、平文（`plaintext.txt`、`plaintext_0604.txt`）
 - `src/`：復号と対照（`decrypt.py`）、較正（`calib.py`）、鍵探しの道具（`kpa.c`、`kpb.c`）
 - `second/`：2回目の書き起こしの依頼文と結果、画像での判定の問いと答え
 - `docs/`：方法（METHOD）、読み（READING）、未解決（OPEN）、先行の確かめ（PRIOR_CHECK）
 - `SOURCES.md`：資料とコマ番号。画像はこのリポジトリに入れていない
+
+## 更新履歴
+
+- 2026-11-11：1940年6月4日の電報（コマ 0863〜0867）の鍵と読みを追加（`docs/READING_0604.md`）。5月17日の鍵と読みは変えていない。
 
 ## ライセンス
 

@@ -47,17 +47,36 @@ Decrypt: `python3 src/decrypt.py`. Tests: `python3 -m unittest discover -s tests
 
 How these were counted, and the caveats, are in `docs/METHOD.en.md`.
 
+## The message of 4 June 1940 (added 11 November 2026)
+
+Frames 0863-0867 of the same reel (sent by Flugabwehrkommando Schwarzwald, five parts, 928 letters of text) were also decrypted in full with the key of that day (first key 19 columns, second key 22). The plaintext survives in its contemporary form in the teleprinter message on frame 0862 of the same file, and the key was recovered by a known-plaintext method from it. What is new is the key of the day.
+
+> Zum Schutze von Heeresausladungen gehen in Stellung am 3. Juni 40: II./2./942 von Bahnhof Immendingen nach Bahnhof Sankt Georgen, seit 19.45 Uhr feuerbereit. … 4./321 (Eis) von Hüfingen nach Villingen, seit 4. Juni 40 04.35 Uhr feuerbereit.
+
+| Item | Value |
+|---|---|
+| Letters that make words | 925/928 (99.7%) |
+| Control (1,000 random keys) | 0 at or above the real keys |
+| Part not used for the key | part 5 (199 letters) decrypts directly |
+| Agreement with a second reader (Codex) | whole message 94.9% (92.7% with the older run on part 5); parts 1-4 96.8-98.9%, part 5 74.5-84.8% |
+
+**Caveat:** the writer of part 5 uses unusual letter shapes (x like an r with a flag, r like a looped h), and our transcription of part 5 fixed these shapes after the key was known. The transcription of part 5 is not an independent reading. Details in `docs/READING_0604.en.md`; decryption with `python3 src/decrypt_0604.py`.
+
 ## Use of AI
 
-Transcription, fitting of the plaintext, key recovery, decryption and documents: Claude Fable 5.1 (Anthropic). Second transcription and image-based letter judgements: OpenAI Codex (gpt-6-astra) and Claude Sonnet. The human directed the work and decided on publication. No human compared the images with the transcriptions or the reading.
+Transcription, fitting of the plaintext, key recovery, decryption and documents: Claude Fable 5.1 (Anthropic). Second transcription and image-based letter judgements: OpenAI Codex (gpt-6-astra) and Claude Sonnet. For the message of 4 June 1940 (added 11 November 2026): transcription, candidate plaintext, key recovery, decryption and documents by Claude Opus 5.5; second transcription by OpenAI Codex (gpt-6-astra). The human directed the work and decided on publication. No human compared the images with the transcriptions or the reading.
 
 ## Files
 
-- `data/`: transcriptions (`ciphertext_0993.txt`, `ciphertext_1025_1027.txt`, and the version before decryption), keys, plaintext
+- `data/`: transcriptions (`ciphertext_0993.txt`, `ciphertext_1025_1027.txt`, the version before decryption, and `ciphertext_0863_0867.txt` for 4 June), keys (`key.txt`, `key_0604.txt`), plaintext (`plaintext.txt`, `plaintext_0604.txt`)
 - `src/`: decryption and control (`decrypt.py`), calibration (`calib.py`), key-recovery tools (`kpa.c`, `kpb.c`)
 - `second/`: prompts and results of the second transcription; questions and answers of the image-based judgements
 - `docs/`: method (METHOD), reading (READING), open points (OPEN), search for earlier work (PRIOR_CHECK)
 - `SOURCES.en.md`: sources and frame numbers. No images are included
+
+## Changes
+
+- 2026-11-11: added the key and reading of the message of 4 June 1940 (frames 0863-0867; `docs/READING_0604.en.md`). The key and reading of 17 May are unchanged.
 
 ## Licence
 
